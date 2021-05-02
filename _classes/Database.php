@@ -1,5 +1,7 @@
 <?php
-require "./_config/config.php";
+if(!(defined('ABS_PATH'))){
+    require_once "./_config/config.php";
+}
 class Database{
 
     private $host = HOST;

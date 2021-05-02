@@ -1,5 +1,7 @@
 <?php
-
+if(!(defined('ABS_PATH'))){
+    require_once "./_config/config.php";
+}
 // Compare route with given url and method
 function CompareUrl(string $url,string $Route,string $method){
     if($url != '/'){$url = rtrim($url,"/");}
@@ -77,4 +79,20 @@ function fetshUrlRoute($url,$route){
 // assets fixer
 function assets($path){
     return "./views/assets/".$path;
+}
+function url($url){
+    return ABS_PATH.$url;
+}
+function redirect($path){
+    header('location: '.ABS_PATH.$path);
+}
+function setSession($email){
+    $_SESSION['key'] = password_hash($email,PASSWORD_DEFAULT);
+}
+function checkSession(){
+    if(isset($_SESSION['key'])){
+        return true;
+    }else{
+        return false;
+    }
 }

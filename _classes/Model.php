@@ -57,4 +57,16 @@ class Model extends Database{
             return false;
         }
     }
+
+    // find
+    public function find($col,$val){
+        $this->tableName = get_called_class()."s";
+        $sql = $this->con->prepare("SELECT * FROM $this->tableName WHERE ".$col."=:val LIMIT 1");
+        $sql->bindParam(":val",$val,PDO::PARAM_STR);
+        if($sql->execute()){
+            return $sql->fetchAll(PDO::FETCH_OBJ)[0];
+        }else{
+            return false;
+        }
+    }
 }

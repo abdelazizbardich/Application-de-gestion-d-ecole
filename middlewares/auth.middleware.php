@@ -1,3 +1,5 @@
 <?php
-
-echo "Auth middleware";
+echo "qs<cwc";
+if(!checkSession()){
+    redirect('/login');
+}
