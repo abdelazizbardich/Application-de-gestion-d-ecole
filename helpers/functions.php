@@ -96,3 +96,6 @@ function checkSession(){
         return false;
     }
 }
+function fileInc($fileName){
+    include ABS_PATH."/views/includes/".$fileName.".php";
+}

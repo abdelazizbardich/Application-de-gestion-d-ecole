@@ -19,3 +19,8 @@ Route::post('/login',function(){
 Route::get('/admin',function(){
     return Route::view('admin.dashboard');
 });
+
+// add student
+Route::get('/student/{action}',function ($action){
+    return Route::controller("student","index");
+});

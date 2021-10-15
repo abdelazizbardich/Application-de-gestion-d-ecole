@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Admin Dashboard</h1>
+    <ul>
+        <li><a href="<?= url('/student/add')?>">Add Student</a></li>
+        <li><a href="<?= url('/teasher/add')?>">Add Teasher</a></li>
+        <li><a href="<?= url('/parent/add')?>">Add Parent</a></li>
+    </ul>
 </body>
 </html>
